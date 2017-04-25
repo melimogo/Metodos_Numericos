@@ -1,12 +1,14 @@
 clear all,close all,clc
 
-
+% Hacemos la lìnea de la mitad, hallamos
+% la columna de la mitad de la matriz y la hacemos
+% igual a 256 
 function M = valores_ceros(mat)
     [m,n] = size(mat);
     M = zeros(m,n);
     for i=1:m
         for j=1:n
-            if j == 180 || j == 179
+            if j == (n/2) || j == (n/2)-1
                 M(i,j)=256;
             else
                 M(i,j)= mat(i,j);
