@@ -1,4 +1,4 @@
-clear all,close all,clc
+clear all, close all, clc
 
 % Hacemos la lìnea de la mitad, hallamos
 % la columna de la mitad de la matriz y la hacemos
@@ -94,8 +94,8 @@ f_b = valores_ceros(f_3);
 [g,h] = size(f_r);
 
 %xf = [p0(1),p1(1),p2(1),p3(1)];
-yf = [1;2];
-x = 3;
+yf = [1;3];
+x = 2;
 grado = 1;
 
 for i=1:g-1
@@ -104,21 +104,21 @@ for i=1:g-1
 
        %rojo
        %;(f_r(i,j+1))
-       xs1= [(f_r(i,j-2));(f_r(i,j-1))];
+       xs1= [(f_r(i,j-1));(f_r(i,j+2))];
        xs_r=xs1';
        f_r(i,j) = polinomio_newton(yf,xs_r,x,grado);
        %disp(f_r(i,j));
 
        %verde
        %;(f_g(i,j+1))
-       xs2= [(f_g(i,j-2));(f_g(i,j-1))];
+       xs2= [(f_g(i,j-1));(f_g(i,j+2))];
        xs_g=xs2';
        f_g(i,j) = polinomio_newton(yf,xs_g,x,grado);
        %disp(f_r(i,j));
 
        %Azul
        %;(f_b(i,j+1))
-       xs3= [(f_b(i,j-2));(f_b(i,j-1))];
+       xs3= [(f_b(i,j-1));(f_b(i,j+2))];
        xs_3=xs3';
        f_b(i,j) = polinomio_newton(yf,xs_3,x,grado);
        %disp(f_r(i,j));
